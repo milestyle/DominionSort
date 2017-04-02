@@ -1,19 +1,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script type="text/javascript" src="../DominionSort/data.js"></script>
-<script type="text/javascript" src="../DominionSort/DominionSort.js"></script>
+	<script type="text/javascript" src="../DominionSort/data.js"></script>
+	<script type="text/javascript" src="../DominionSort/DominionSort.js"></script>
     <title>Dominion Sort</title>
 </head>
-<body>
+<body onload="startSort()">
 	<div>Welcome to Dominion Sort!</div>
+	<br />
 	<div id="tableDiv">
 		<table id="tblDomSort">
 			<tr>
-				<td colspan="2">Please Select a card below</td>
+				<td style="text-align: center;" colspan="2"><b>Please Select a card below</b></td>
 			</tr>
-			<tr></tr>
-			<tr></tr>
+			<tr>
+				<td>
+					<div id="cardName1"></div>
+					<div id="cardCost1"></div>
+					<div style="width:150px" id="cardDescription1"></div>
+				</td>
+				<td>
+					<div id="cardName2"></div>
+					<div id="cardCost2"></div>
+					<div style="width:150px" id="cardDescription2"></div>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="button" value="Pick Card 1" id="btnCard1" onClick="selectCard1();"></input></td>
+				<td><input type="button" value="Pick Card 2" id="btnCard2" onClick="selectCard2();"></input></td>			
+			</tr>
 		</table>
+		<input type="button" value="I'm Done!" id="btnDone" onClick="Done();"></input>
+	</div>
+	<div id="divDone" style="visibility:hidden;">
+		Here is your sorted deck:<br />
+		<div id="divDeck">
+		</div>
 	</div>
 </body>
 </html>
