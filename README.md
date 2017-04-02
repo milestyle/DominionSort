@@ -1,5 +1,5 @@
 # DominionSort
-Code challenge. Sort dominion cards.
+Created as a coding challenge for a job interview. Sorts dominion cards.
 
 To run just download the files, right click on DominionSort.html and click Open. 
 
