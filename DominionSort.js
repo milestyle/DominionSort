@@ -1,6 +1,10 @@
-var i = 0;
-var deck = shortDeck; // change this if you want to test with longDeck
 
+var deck = shortDeck; // change this if you want to test with longDeck
+var len = deck.length;
+var i = len-1;
+var j = 1;
+
+	
 function DominionSort(){
 	this.name1 = document.getElementById("cardName1");
 	this.cost1 = document.getElementById("cardCost1");
@@ -46,17 +50,28 @@ function startSort(){
 	var domSort = new DominionSort();
 	shuffle(deck);
 	
-	domSort.setCard1(deck[0]);
-	domSort.setCard2(deck[1]);
+	domSort.setCard1(deck[j-1]);
+	domSort.setCard2(deck[j]);
 }
 
-function continueSort(){
-	//All this needs to change.
-	var domSort = new DominionSort();
-	shuffle(deck);
+function continueSort(sel){
+	//basically a user-driven bubble sort.
+	if (sel==2){
+		var temp = deck[j-1];
+		deck[j-1] = deck[j];
+		deck[j] = temp;
+	}
+	j++;
+	if (j>i) {
+		j = 1;
+		i--;
+	}
+	if (i<0) Done();
 	
-	domSort.setCard1(deck[0]);
-	domSort.setCard2(deck[1]);
+	var domSort = new DominionSort();
+	
+	domSort.setCard1(deck[j-1]);
+	domSort.setCard2(deck[j]);
 }
 
 function selectCard1(){
